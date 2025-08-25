@@ -50,7 +50,9 @@ public:
   unitree_legged_msgs::MotorState lastState;
   ServoCmd servoCmd;
 
-  UnitreeJointController();
+  UnitreeJointController()
+      : sensor_torque(0.0f), isHip(false), isThigh(false), isCalf(false),
+        rqtTune(false) {}
   ~UnitreeJointController();
   virtual bool init(hardware_interface::EffortJointInterface *robot,
                     ros::NodeHandle &n);

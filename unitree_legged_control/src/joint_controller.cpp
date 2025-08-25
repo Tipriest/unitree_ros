@@ -24,10 +24,11 @@ UnitreeJointController::~UnitreeJointController() {
 
 void UnitreeJointController::setTorqueCB(
     const geometry_msgs::WrenchStampedConstPtr &msg) {
-  if (isHip)
+  if (isHip) {
     sensor_torque = msg->wrench.torque.x;
-  else
+  } else {
     sensor_torque = msg->wrench.torque.y;
+  }
   // printf("sensor torque%f\n", sensor_torque);
 }
 
@@ -135,7 +136,6 @@ void UnitreeJointController::starting(const ros::Time &time) {
   lastCmd.tau = 0;
   lastState.tauEst = 0;
   command.initRT(lastCmd);
-
   pid_controller_.reset();
 }
 
