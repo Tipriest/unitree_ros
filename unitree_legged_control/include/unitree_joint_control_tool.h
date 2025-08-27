@@ -8,26 +8,28 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 #ifndef _LAIKAGO_CONTROL_TOOL_H_
 #define _LAIKAGO_CONTROL_TOOL_H_
 
-#include <stdio.h>
-#include <stdint.h>
 #include <algorithm>
 #include <math.h>
+#include <stdint.h>
+#include <stdio.h>
 
-#define posStopF (2.146E+9f)  // stop position control mode
-#define velStopF (16000.0f)   // stop velocity control mode
+#define posStopF (2.146E+9f) // stop position control mode
+#define velStopF (16000.0f)  // stop velocity control mode
 
-typedef struct 
-{
-    uint8_t mode;
-    double pos;
-    double posStiffness;
-    double vel;
-    double velStiffness;
-    double torque;
+typedef struct {
+  uint8_t mode;
+  double pos;
+  double posStiffness; //位置控制刚度，一些高端伺服电机里面有，3508没有，就是Pd
+  double vel;
+  double velStiffness; //速度控制刚度，就是Pv
+  double torque;
 } ServoCmd;
 
-double clamp(double&, double, double);  // eg. clamp(1.5, -1, 1) = 1
-double computeVel(double current_position, double last_position, double last_velocity, double duration);  // get current velocity
-double computeTorque(double current_position, double current_velocity, ServoCmd&);  // get torque
+double clamp(double &, double, double); // eg. clamp(1.5, -1, 1) = 1
+double computeVel(double current_position, double last_position,
+                  double last_velocity,
+                  double duration); // get current velocity
+double computeTorque(double current_position, double current_velocity,
+                     ServoCmd &); // get torque
 
 #endif
