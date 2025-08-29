@@ -23,7 +23,9 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 
 #define PMSM (0x0A)
 #define BRAKE (0x00)
+// 典型的“位置环关闭标志”
 #define PosStopF (2.146E+9f)
+// 典型的“速度环关闭标志”
 #define VelStopF (16000.0f)
 
 namespace unitree_legged_control {

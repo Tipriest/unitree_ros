@@ -21,10 +21,12 @@ double computeTorque(double currentPos, double currentVel, ServoCmd &cmd) {
   targetTorque = cmd.torque;
   posStiffness = cmd.posStiffness;
   velStiffness = cmd.velStiffness;
-  if (fabs(targetPos - posStopF) < 1e-6)
+  if (fabs(targetPos - posStopF) < 1e-6) {
     posStiffness = 0;
-  if (fabs(targetVel - velStopF) < 1e-6)
+  }
+  if (fabs(targetVel - velStopF) < 1e-6) {
     velStiffness = 0;
+  }
   calcTorque = posStiffness * (targetPos - currentPos) +
                velStiffness * (targetVel - currentVel) + targetTorque;
   return calcTorque;
