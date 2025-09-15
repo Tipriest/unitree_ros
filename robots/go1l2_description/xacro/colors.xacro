@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot>
+    #000000
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+
+    #0000CC
+    <material name="blue">
+        <color rgba="0.0 0.0 ${0xCC/255} 1.0"/>
+    </material>
+
+    #00CC00
+    <material name="green">
+        <color rgba="0.0 ${0xCC/255} 0.0 1.0"/>
+    </material>
+
+    #333333
+    <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+
+    #E9E9D8
+    <material name="silver">
+        <color rgba="${0xE9/255} ${0xE9/255} ${0xD8/255} 1.0"/>
+    </material>
+
+    #FF6C0A
+    <material name="orange">
+        <color rgba="${0xFF/255} ${0x6C/255} ${0x0A/255} 1.0"/>
+    </material>
+
+    #DECFC3
+    <material name="brown">
+        <color rgba="${0xDE/255} ${0xCF/255} ${0xC3/255} 1.0"/>
+    </material>
+
+    #CC0000
+    <material name="red">
+        <color rgba="${0xCC/255} 0.0 0.0 1.0"/>
+    </material>
+
+    #FFFFFF
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    #800080
+    <material name="purple">
+        <color rgba="${0x80/255} 0.0 ${0x80/255} 1.0"/>
+    </material>
+
+    #00FFFF
+    <material name="cyan">
+        <color rgba="0.0 1.0 1.0 1.0"/>
+    </material>
+
+    #FFFF00
+    <material name="yellow">
+        <color rgba="1.0 1.0 0.0 1.0"/>
+    </material>
+
+    #FFC0CB
+    <material name="pink">
+        <color rgba="1.0 ${0xC0/255} ${0xCB/255} 1.0"/>
+    </material>
+
+    #87CEEB
+    <material name="skyblue">
+        <color rgba="${0x87/255} ${0xCE/255} ${0xEB/255} 1.0"/>
+    </material>
+
+    #006400
+    <material name="darkgreen">
+        <color rgba="0.0 ${0x64/255} 0.0 1.0"/>
+    </material>
+
+    #FFD700
+    <material name="gold">
+        <color rgba="1.0 ${0xD7/255} 0.0 1.0"/>
+    </material>
+
+    #A52A2A
+    <material name="chocolate">
+        <color rgba="${0xA5/255} ${0x2A/255} ${0x2A/255} 1.0"/>
+    </material>
+
+</robot>

@@ -3,14 +3,17 @@
 <robot name="go1l2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:arg name="DEBUG" default="false"/>
-
+    <!-- TODO: 将深度相机和超声传感器隔离至单独的文件夹 -->
+    <!-- TODO: 添加不同种类的传感器包-->
+    <!-- TODO: 给机器人的腿换一下不同的颜色 -->
+    <!-- TODO: 把机器人一开始就是卧倒的姿态，然后处于gazebo的(0， 0)处的位置 -->
+    <xacro:include filename="$(find go1l2_description)/xacro/colors.xacro"/>
     <xacro:include filename="$(find go1l2_description)/xacro/const.xacro"/>
-    <xacro:include filename="$(find go1l2_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find go1l2_description)/xacro/leg.xacro"/>
-    <!-- <xacro:include filename="$(find go1l2_description)/xacro/stairs.xacro"/> -->
     <xacro:include filename="$(find go1l2_description)/xacro/gazebo.xacro"/>
     <xacro:include filename="$(find go1l2_description)/xacro/depthCamera.xacro"/>
     <xacro:include filename="$(find go1l2_description)/xacro/ultraSound.xacro"/>
+    <!-- <xacro:include filename="$(find go1l2_description)/xacro/stairs.xacro"/> -->
     <!-- <xacro:include filename="$(find go1l2_gazebo)/launch/stairs.urdf.xacro"/> -->
 
     <!-- <xacro:stairs stairs="15" xpos="0" ypos="0" zpos="0" /> -->
@@ -19,6 +22,8 @@
     <!-- Actually, the rotor will rotate and the joint is not fixed. Reduction ratio should be considered. -->
 
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
+    <!-- DEBUG模式将会把机器人悬挂起来 -->
+
     <xacro:if value="$(arg DEBUG)">
         <link name="world"/>
         <joint name="base_static_joint" type="fixed">
@@ -47,9 +52,11 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://go1l2_description/meshes/trunk.dae" scale="1 1 1"/>
+                <mesh filename="package://go1l2_description/meshes/trunk.stl" scale="1 1 1"/>
             </geometry>
-            <!-- <material name="orange"/> -->
+            <material name="orange">
+                <color rgba="1.0 0.4235 0.0392 1.0"/>
+            </material>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0"/>
