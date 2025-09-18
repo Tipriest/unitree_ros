@@ -106,7 +106,32 @@
     <xacro:leg name="RR" mirror="-1" mirror_dae="False"  front_hind="-1" front_hind_dae="False" />
     <xacro:leg name="RL" mirror="1"  mirror_dae="True"   front_hind="-1" front_hind_dae="False" />
 
-    <xacro:arg name="gpu" default="false"/>
+    <!-- <joint name="lidar_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="lidar_link"/>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.15"/>
+    </joint>
+    
+    <link name="imu_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size=".001 .001 .001"/>
+            </geometry>
+        </collision>
+    </link> -->
+    <!-- <xacro:arg name="gpu" default="false"/>
     <xacro:property name="gpu" value="$(arg gpu)" />
     <xacro:property name="lidar_frame_name" value="BPearl_Lidar"/>
     <xacro:arg name="organize_cloud" default="false"/>
@@ -114,7 +139,14 @@
     <xacro:include filename="$(find gazebo_sensors)/lidars/RS-BPearl/xacro/RS-BPearl.xacro"/>
     <xacro:RS-BPearl parent="trunk" name="${lidar_frame_name}" topic="/bpearl_points" organize_cloud="${organize_cloud}" hz="15" samples="1000" gpu="${gpu}">
         <origin xyz="0.30 0.0 0.0" rpy="0 1.5708 0" />
-    </xacro:RS-BPearl>
+    </xacro:RS-BPearl> -->
+    <xacro:arg name="gpu" default="true"/>
+    <xacro:property name="gpu" value="$(arg gpu)" />
+    <xacro:property name="lidar_frame_name" value="VLP-16"/>
+    <xacro:include filename="$(find gazebo_sensors)/lidars/VLP-16/xacro/VLP-16.xacro"/>
+    <xacro:VLP-16 parent="base" name="${lidar_frame_name}" topic="/vlp16_points" hz="10" samples="1000" gpu="${gpu}">
+        <origin xyz="0.0 0.0 0.15" rpy="0 0 0" />
+    </xacro:VLP-16>
 
     <xacro:depthCamera camID="1" name="face">
         <origin rpy="${PI} 0 0" xyz="0.2785 0.0125 0.0167"/>
