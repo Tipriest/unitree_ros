@@ -6,7 +6,6 @@ Robot description:
 
 * [`a1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/a1_description)
 * [`aliengo`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengo_description)
-* [`aliengoZ1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/aliengoZ1_description)
 * [`b1`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b1_description)
 * [`b2`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b2_description)
 * [`b2w`](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/b2w_description)
