@@ -148,7 +148,7 @@
         <origin xyz="0.0 0.0 0.15" rpy="0 0 0" />
     </xacro:VLP-16>
 
-    <xacro:depthCamera camID="1" name="face">
+    <!-- <xacro:depthCamera camID="1" name="face">
         <origin rpy="${PI} 0 0" xyz="0.2785 0.0125 0.0167"/>
     </xacro:depthCamera>
 
@@ -166,9 +166,9 @@
 
     <xacro:depthCamera camID="5" name="rearDown">
         <origin rpy="${PI} ${PI/2} 0" xyz="-0.0825 0.0125 -0.04365"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <joint name="camera_laserscan_joint_left" type="fixed">
+    <!-- <joint name="camera_laserscan_joint_left" type="fixed">
         <origin rpy="0 0.2618 0" xyz="0 0 0"/>
         <parent link="camera_left"/>
         <child link="camera_laserscan_link_left"/>
@@ -184,7 +184,7 @@
     </joint>
 
     <link name="camera_laserscan_link_right">
-    </link>
+    </link> -->
 
     <xacro:ultraSound name="left">
         <origin rpy="0 0.2618 ${PI/2}" xyz="-0.0535  0.0826 0.00868"/>
