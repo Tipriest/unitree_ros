@@ -25,8 +25,8 @@
         <plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
             <frameName>world</frameName>           <!-- 父坐标系 -->
             <robotNamespace>/</robotNamespace>
-            <bodyName>base</bodyName>         <!-- 子坐标系（机器人底盘） -->
-            <topicName>gazebo_gt_odom</topicName>
+            <bodyName>base</bodyName>              <!-- 子坐标系（机器人底盘） -->
+            <topicName>gazebo_odom</topicName>
             <xyzOffsets>0 0 0</xyzOffsets>
             <rpyOffsets>0 0 0</rpyOffsets>
             <gaussianNoise>0</gaussianNoise>
