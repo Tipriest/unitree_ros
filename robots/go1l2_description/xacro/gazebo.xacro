@@ -31,7 +31,7 @@
             <rpyOffsets>0 0 0</rpyOffsets>
             <gaussianNoise>0</gaussianNoise>
             <alwaysOn>true</alwaysOn>
-            <updateRate>250.0</updateRate>
+            <updateRate>10.0</updateRate>
         </plugin>
     </gazebo>
     <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
