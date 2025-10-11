@@ -20,6 +20,20 @@
         </plugin>
     </gazebo>
 
+    <!-- Show the accurate position of trunk center. -->
+    <gazebo>
+        <plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
+            <frameName>world</frameName>           <!-- 父坐标系 -->
+            <robotNamespace>/</robotNamespace>
+            <bodyName>base</bodyName>              <!-- 子坐标系（机器人底盘） -->
+            <topicName>gazebo_odom</topicName>
+            <xyzOffsets>0 0 0</xyzOffsets>
+            <rpyOffsets>0 0 0</rpyOffsets>
+            <gaussianNoise>0</gaussianNoise>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>5.0</updateRate>
+        </plugin>
+    </gazebo>
     <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
     <!-- <gazebo>
         <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">

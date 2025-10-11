@@ -31,6 +31,21 @@
         </plugin>
     </gazebo>
 
+    <!-- Show the accurate position of trunk center. -->
+    <gazebo>
+        <plugin filename="libgazebo_ros_p3d.so" name="gazebo_ros_p3d">
+            <frameName>world</frameName>           <!-- 父坐标系 -->
+            <robotNamespace>/</robotNamespace>
+            <bodyName>base</bodyName>              <!-- 子坐标系（机器人底盘） -->
+            <topicName>gazebo_odom</topicName>
+            <xyzOffsets>0 0 0</xyzOffsets>
+            <rpyOffsets>0 0 0</rpyOffsets>
+            <gaussianNoise>0</gaussianNoise>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>10.0</updateRate>
+        </plugin>
+    </gazebo>
+    
     <gazebo>
         <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
             <bodyName>trunk</bodyName>
