@@ -25,7 +25,7 @@ Robot and joints controller:
 
 Simulation related:
 * `unitree_gazebo`
-* `unitree_legged_control`
+* `unitree_legged_control` 
 
 # Dependencies
 * [ROS](https://www.ros.org/) Melodic or ROS Kinetic (has not been tested)
