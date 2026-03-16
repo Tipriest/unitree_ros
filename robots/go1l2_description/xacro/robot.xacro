@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<robot name="go1l2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="go1l2"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:arg name="DEBUG" default="false"/>
     <!-- TODO: 将深度相机和超声传感器隔离至单独的文件夹 -->
@@ -31,7 +32,7 @@
             <parent link="world"/>
             <child link="base"/>
         </joint>
-    </xacro:if> 
+    </xacro:if>
 
     <link name="base">
         <visual>
@@ -67,10 +68,7 @@
         <inertial>
             <origin rpy="0 0 0" xyz="${trunk_com_x} ${trunk_com_y} ${trunk_com_z}"/>
             <mass value="${trunk_mass}"/>
-            <inertia
-                ixx="${trunk_ixx}" ixy="${trunk_ixy}" ixz="${trunk_ixz}"
-                iyy="${trunk_iyy}" iyz="${trunk_iyz}"
-                izz="${trunk_izz}"/>  
+            <inertia ixx="${trunk_ixx}" ixy="${trunk_ixy}" ixz="${trunk_ixz}" iyy="${trunk_iyy}" iyz="${trunk_iyz}" izz="${trunk_izz}"/>
         </inertial>
     </link>
 
@@ -101,17 +99,17 @@
         </collision>
     </link>
 
-    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1"  front_hind_dae="True"  />
-    <xacro:leg name="FL" mirror="1"  mirror_dae="True"   front_hind="1"  front_hind_dae="True"  />
-    <xacro:leg name="RR" mirror="-1" mirror_dae="False"  front_hind="-1" front_hind_dae="False" />
-    <xacro:leg name="RL" mirror="1"  mirror_dae="True"   front_hind="-1" front_hind_dae="False" />
+    <xacro:leg name="FR" mirror="-1" mirror_dae= "False" front_hind="1" front_hind_dae="True" />
+    <xacro:leg name="FL" mirror="1" mirror_dae="True" front_hind="1" front_hind_dae="True" />
+    <xacro:leg name="RR" mirror="-1" mirror_dae="False" front_hind="-1" front_hind_dae="False" />
+    <xacro:leg name="RL" mirror="1" mirror_dae="True" front_hind="-1" front_hind_dae="False" />
 
     <!-- <joint name="lidar_joint" type="fixed">
         <parent link="trunk"/>
         <child link="lidar_link"/>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.15"/>
     </joint>
-    
+
     <link name="imu_link">
         <inertial>
             <mass value="0.001"/>
@@ -148,6 +146,9 @@
         <origin xyz="0.0 0.0 0.0575" rpy="0 0 0" />
     </xacro:VLP-16>
 
+    <xacro:depthCamera camID="1" name="face">
+        <origin rpy="0 0 0" xyz="0.2785 0.0125 0.0167"/>
+    </xacro:depthCamera>
     <!-- <xacro:depthCamera camID="1" name="face">
         <origin rpy="${PI} 0 0" xyz="0.2785 0.0125 0.0167"/>
     </xacro:depthCamera>
